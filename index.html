@@ -1062,9 +1062,25 @@ const CONV_PATTERNS=[
 ];
 const themeLabel=t=>({cognition:'Cognitive deskilling',epistemic:'Epistemic erosion',labor:'Labor displacement',governance:'Governance',theory:'Theory',deception:'AI scheming'}[t]||t);
 const tierLabel=t=>t==1?'Tier 1 · peer-reviewed':t==2?'Tier 2 · preprint/data':'Tier 3 · theory';
+
+/* Storage shim: use Cursor storage when available, otherwise localStorage */
+async function storageGet(key){
+  if(window.storage&&typeof window.storage.get==='function'){
+    return window.storage.get(key);
+  }
+  const value=window.localStorage.getItem(key);
+  return value===null?null:{value};
+}
+async function storageSet(key,value,persist){
+  if(window.storage&&typeof window.storage.set==='function'){
+    return window.storage.set(key,value,persist);
+  }
+  window.localStorage.setItem(key,value);
+}
+
 async function smLoad(){
   try{
-    const r=await window.storage.get('gd-v2-sources');
+    const r=await storageGet('gd-v2-sources');
     if(r){
       const stored=JSON.parse(r.value);
       // Migrate: if stored has fewer sources than SEED, merge in missing ones
@@ -1072,18 +1088,18 @@ async function smLoad(){
         const storedIds=new Set(stored.map(x=>x.id));
         const missing=SEED.filter(x=>!storedIds.has(x.id));
         const merged=[...stored,...missing];
-        await window.storage.set('gd-v2-sources',JSON.stringify(merged));
+        await storageSet('gd-v2-sources',JSON.stringify(merged));
         return merged;
       }
       return stored;
     }
   }catch(e){}
-  await window.storage.set('gd-v2-sources',JSON.stringify(SEED));
+  await storageSet('gd-v2-sources',JSON.stringify(SEED));
   return SEED;
 }
 async function smSave(s){
-  await window.storage.set('gd-v2-sources',JSON.stringify(s));
-  await window.storage.set('gd-v2-update',new Date().toISOString());
+  await storageSet('gd-v2-sources',JSON.stringify(s));
+  await storageSet('gd-v2-update',new Date().toISOString());
 }
 async function smStats(){
   const s=await smLoad();
@@ -1091,7 +1107,7 @@ async function smStats(){
   const upEl=document.getElementById('smLastUpdated');
   if(upEl){
     try{
-      const r=await window.storage.get('gd-v2-update');
+      const r=await storageGet('gd-v2-update');
       if(r){
         const d=new Date(r.value);
         upEl.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
@@ -1224,14 +1240,14 @@ async function smSubmitReview(){
     if(res.ok){
       if(msg){msg.style.color='#28c996';msg.textContent='Submitted. Thank you — it will be reviewed for inclusion.';}
       ['srName','srEmail','srNote'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-      await window.storage.set('gd-v2-lastsubmit',new Date().toISOString());
+      await storageSet('gd-v2-lastsubmit',new Date().toISOString());
     } else {
       /* Fallback: save locally if Netlify Forms is unavailable */
-      await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
+      await storageSet('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
       if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify Forms is not available in this environment.';}
     }
   } catch(e){
-    await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
+    await storageSet('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
     if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify Forms unavailable right now.';}
   }
   setTimeout(()=>{if(msg)msg.style.display='none';},6000);
