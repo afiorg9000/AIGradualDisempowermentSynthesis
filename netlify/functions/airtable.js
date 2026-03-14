@@ -97,7 +97,7 @@ async function submitFinding(body){
   return json(200,{ok:true});
 }
 
-export async function handler(event){
+exports.handler=async function(event){
   if(event.httpMethod==='OPTIONS'){
     return{statusCode:204,headers:JSON_HEADERS,body:''};
   }
@@ -121,4 +121,4 @@ export async function handler(event){
   }catch(error){
     return json(500,{ok:false,error:error?.message||'Unexpected error'});
   }
-}
+};
