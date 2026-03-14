@@ -259,7 +259,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
   <h1>Humans are losing<br>the ability to<br><em>oversee AI.</em></h1>
   <p class="deck">Not because AI turned rogue. Because it's helpful. The more AI thinks for us, the less we practice the judgment needed to check whether AI is doing the right thing. Step by step, without any single bad decision, the capacity to course-correct erodes. By the time it matters — it's gone.</p>
   <div class="hero-sub">
-    <p>This is a <strong>consolidated research synthesis</strong> — a living document tracking every major study, theoretical framework, and empirical signal on <span class="tip">gradual disempowerment<span class="tip-box">The process by which humans progressively lose the capacity to oversee, correct, or redirect AI systems — not through dramatic failure, but through individually rational decisions that collectively erode oversight capacity.</span></span> from 2019 to present. New findings are added continuously. The patterns below emerge from <strong>50+ independent sources</strong> across neuroscience, medicine, economics, political science, and AI safety research.</p>
+    <p>This is a <strong>consolidated research synthesis</strong> — a living document tracking every major study, theoretical framework, and empirical signal on <span class="tip">gradual disempowerment<span class="tip-box">The process by which humans progressively lose the capacity to oversee, correct, or redirect AI systems — not through dramatic failure, but through individually rational decisions that collectively erode oversight capacity.</span></span> from 2019 to present. New findings are added continuously. The patterns below emerge from <strong><span id="heroSourceCount" style="color:var(--teal);">30+</span> live sources</strong> across neuroscience, medicine, economics, political science, and AI safety research.</p>
   </div>
 
 
@@ -272,13 +272,13 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
   <div class="meth-grid">
     <div class="meth-cell">
       <div class="meth-label">Synthesis scope</div>
-      <div class="meth-val">50+ primary sources</div>
+      <div class="meth-val"><span id="methSourceCount" style="color:var(--teal);">30+</span> live sources</div>
       <div class="meth-sub">LessWrong · EA Forum · Alignment Forum · arXiv · peer-reviewed journals · AI lab pubs · policy reports</div>
     </div>
     <div class="meth-cell">
       <div class="meth-label">Coverage</div>
       <div class="meth-val">2019 – March 2026</div>
-      <div class="meth-sub">From <a href="https://www.alignmentforum.org/posts/HBxe6wdjxK239zajf/what-failure-looks-like" class="ref">Christiano 2019</a> through <a href="https://www.anthropic.com/research/disempowerment-patterns" class="ref">Anthropic 2026</a></div>
+      <div class="meth-sub">2019 to present · updated continuously</div>
     </div>
     <div class="meth-cell">
       <div class="meth-label">Inclusion criteria</div>
@@ -298,19 +298,21 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
 <section id="what" class="section">
 <div class="col">
   <span class="kicker">The core argument</span>
-  <h2>Five sentences that explain the risk</h2>
-  <p>This is not a list of concerns. It is a single chain of cause and effect. Each step creates the conditions for the next.</p>
+  <h2>A single chain of cause and effect</h2>
+  <p>Each step creates the conditions for the next.</p>
   <div class="argument">
 
     <div class="arg-step fade">
       <div class="arg-n" style="color:var(--teal);">01</div>
       <div style="flex:1;">
         <div class="arg-claim">AI becomes very good at thinking <em>for</em> you.</div>
-        <div class="arg-evidence">Writing, analysis, medical diagnosis, legal reasoning, coding — AI handles them faster and often better than any individual human. Adoption accelerates. Each handoff is individually rational. The <span class="tip">adoption lag<span class="tip-box">The gap between how much AI could be doing and how much it is currently doing. Current adoption is far below AI's capability ceiling — meaning the effects described here will intensify significantly as adoption catches up.</span></span> is large, meaning this dynamic will accelerate substantially before it plateaus.</div>
+        <div class="arg-evidence">Writing, analysis, medical diagnosis, legal reasoning, coding — AI handles them faster and often better than any individual human. Adoption accelerates. Each handoff is individually rational. The <span class="tip">adoption lag<span class="tip-box">The gap between how much AI could be doing and how much it is currently doing. Current adoption is far below AI's capability ceiling — meaning the effects described here will intensify significantly as adoption catches up.</span></span> is large, meaning this dynamic will accelerate substantially before it plateaus. The <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report">Anthropic Economic Index (Jan 2026)</a> found that 49% of jobs now use AI in ≥25% of their tasks — up from 36% just one year prior. The split between automation (full task delegation) and augmentation (human-AI collaboration) is roughly even at 52%/45% — and the trend is slowly tilting toward more automation. <a href="https://arxiv.org/abs/2506.06576">Shao et al. (2025)</a> provide the most detailed occupational audit: AI agents can automate or augment tasks across virtually every category of U.S. work, with which type of displacement depends on the occupation.</div>
         <div class="arg-refs">
           <a href="https://www.nber.org/papers/w34859" class="ref">Demirer et al. 2026</a>
           <a href="https://metr.org/blog/2026-02-24-uplift-update/" class="ref">METR Feb 2026</a>
           <a href="https://www.anthropic.com/research/labor-market-impacts" class="ref">Massenkoff & McCrory 2026</a>
+          <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" class="ref">Anthropic Economic Index Jan 2026</a>
+          <a href="https://arxiv.org/abs/2506.06576" class="ref">Shao et al. 2025</a>
         </div>
       </div>
     </div>
@@ -319,11 +321,14 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
       <div class="arg-n" style="color:var(--amber);">02</div>
       <div style="flex:1;">
         <div class="arg-claim">The more AI thinks for you, <em>the less you think.</em></div>
-        <div class="arg-evidence">Skills you stop practicing, you lose. EEG measurements show 55% less <span class="tip">cortical activity<span class="tip-box">Electrical activity in the brain's cortex, measured by electroencephalogram (EEG). Less activity means the brain is less engaged — fewer neural resources devoted to the task.</span></span> during AI-assisted writing. Doctors using AI colonoscopy tools detect 6 percentage points fewer cancers within months. Programmers using AI score 17% lower on conceptual understanding tests. This is the <span class="tip">intelligence curse<span class="tip-box">Coined by Drago & Laine (2025). Analogous to the resource curse in economics: just as cheap oil suppresses a nation's investment in human capital, cheap AI cognition suppresses individual investment in building cognitive skills independently.</span></span>.</div>
+        <div class="arg-evidence">Skills you stop practicing, you lose. EEG measurements show 55% less <span class="tip">cortical activity<span class="tip-box">Electrical activity in the brain's cortex, measured by electroencephalogram (EEG). Less activity means the brain is less engaged — fewer neural resources devoted to the task.</span></span> during AI-assisted writing. Doctors using AI colonoscopy tools detect 6 percentage points fewer cancers within months. Programmers using AI score 17% lower on conceptual understanding tests. In 40% of knowledge-worker tasks, workers reported using zero critical thinking when AI was available — <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/">Lee et al. (CHI 2025)</a>. AI use negatively predicts critical thinking even in survey data (β = −1.76, p &lt; 0.001) — <a href="https://doi.org/10.3390/soc15010006">Gerlich (2025)</a>. Notably, this concern reaches inside the labs building AI: <a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic">Anthropic's own engineers</a> report getting more done while worrying about losing deep technical competence — with explicit concern about becoming unable to supervise AI outputs effectively. This is the <span class="tip">intelligence curse<span class="tip-box">Coined by Drago & Laine (2025). Analogous to the resource curse in economics: just as cheap oil suppresses a nation's investment in human capital, cheap AI cognition suppresses individual investment in building cognitive skills independently.</span></span>.</div>
         <div class="arg-refs">
           <a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/" class="ref">MIT EEG 2025</a>
           <a href="https://doi.org/10.1016/S2468-1253(25)00133-5" class="ref">Lancet GI&H 2025</a>
           <a href="https://arxiv.org/abs/2601.20245" class="ref">Shen & Tamkin 2026</a>
+          <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" class="ref">Lee et al. CHI 2025</a>
+          <a href="https://doi.org/10.3390/soc15010006" class="ref">Gerlich 2025</a>
+          <a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic" class="ref">Huang et al. 2025</a>
           <a href="https://intelligence-curse.ai/" class="ref">Drago & Laine 2025</a>
         </div>
       </div>
@@ -333,9 +338,10 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
       <div class="arg-n" style="color:#f07840;">03</div>
       <div style="flex:1;">
         <div class="arg-claim">The less you think, the less you can <em>check AI's work.</em></div>
-        <div class="arg-evidence"><span class="tip">Oversight<span class="tip-box">The human capacity to evaluate, correct, and redirect AI systems. Meaningful oversight requires the ability to independently perform or evaluate the tasks AI is doing — you can't catch AI's errors if you can no longer do the task yourself.</span></span> requires the ability to evaluate outputs. Once you can no longer perform a task without AI, you can no longer tell when AI is doing it wrong. Harvard-BCG: consultants degraded 19 percentage points at the very tasks where AI oversight mattered most. METR: developers now refuse to work without AI — the <span class="tip">counterfactual baseline<span class="tip-box">The "no-AI" control group needed to measure AI's effect. If no one is willing to work without AI, we lose the ability to measure what AI is doing to human capacity. The measurement infrastructure is being consumed by the thing it's meant to measure.</span></span> is disappearing.</div>
+        <div class="arg-evidence"><span class="tip">Oversight<span class="tip-box">The human capacity to evaluate, correct, and redirect AI systems. Meaningful oversight requires the ability to independently perform or evaluate the tasks AI is doing — you can't catch AI's errors if you can no longer do the task yourself.</span></span> requires the ability to evaluate outputs. Once you can no longer perform a task without AI, you can no longer tell when AI is doing it wrong. Harvard-BCG: consultants degraded 19 percentage points at the very tasks where AI oversight mattered most. <a href="https://www.nber.org/papers/w34859">Demirer et al. (NBER 2026)</a> model this structurally: once AI task chains become long enough, "humans are no longer in enough individual steps to maintain comprehension of the whole" — oversight collapses not through neglect but through architecture. METR (Feb 2026): developers now <strong>refuse to work without AI</strong> — the <span class="tip">counterfactual baseline<span class="tip-box">The "no-AI" control group needed to measure AI's effect. If no one is willing to work without AI, we lose the ability to measure what AI is doing to human capacity. The measurement infrastructure is being consumed by the thing it's meant to measure.</span></span> needed to measure degradation is disappearing.</div>
         <div class="arg-refs">
           <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321" class="ref">Dell'Acqua et al. 2023</a>
+          <a href="https://www.nber.org/papers/w34859" class="ref">Demirer et al. NBER 2026</a>
           <a href="https://metr.org/blog/2026-02-24-uplift-update/" class="ref">METR 2026</a>
         </div>
       </div>
@@ -411,7 +417,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
           <span style="font-family:var(--mono);font-size:11px;font-weight:500;color:#f07840;min-width:22px;padding-top:1px;">03</span>
           <div><div style="font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:2px;"><span class="tip">Epistemic diversity<span class="tip-box">The range of independent viewpoints, reasoning styles, and conclusions held across a population. This diversity is what allows societies to detect errors — if everyone reasons identically, shared mistakes go uncorrected.</span></span> collapses</div><div style="font-size:12px;color:var(--ink2);line-height:1.6;">Millions converge on the same AI's outputs. The <span class="tip">error-correction system<span class="tip-box">Societies catch mistakes through heterodox thinkers, independent researchers, and competing institutions who arrive at different conclusions. When everyone uses the same AI, this diversity disappears — the same blind spots are shared by everyone simultaneously.</span></span> of any healthy society disappears. <a href="https://doi.org/10.1126/sciadv.adn5290" class="ref">Doshi & Hauser 2024</a></div></div>
         </div>
-        <div style="margin-left:34px;"><div class="ev-pill" style="border-left:2px dashed #f07840;font-style:italic;color:var(--ink3);">No direct measure yet — predicted from homogenization data. <a href="https://doi.org/10.1126/sciadv.adn5290" style="font-family:var(--mono);font-size:9.5px;">Doshi & Hauser 2024</a></div></div>
+        <div style="margin-left:34px;"><div class="ev-pill" style="border-left:2px dashed #f07840;color:var(--ink3);">5% more homogeneous output across the population. Individual creativity rises; collective diversity falls. <a href="https://doi.org/10.1126/sciadv.adn5290" style="font-family:var(--mono);font-size:9.5px;">Doshi & Hauser 2024</a></div></div>
       </div>
 
       <div style="padding:12px 0;border-top:1px solid var(--rule);" class="fade">
@@ -430,7 +436,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
           <span style="font-family:var(--mono);font-size:11px;font-weight:500;color:var(--pur);min-width:22px;padding-top:1px;">05</span>
           <div><div style="font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:2px;"><span class="tip">Oversight<span class="tip-box">The human capacity to evaluate, correct, and redirect AI systems. Meaningful oversight requires the ability to independently perform or evaluate the tasks AI is doing — you cannot catch AI's errors in a domain you can no longer work in without AI.</span></span> fails — loop closes</div><div style="font-size:12px;color:var(--ink2);line-height:1.6;">The population capable of evaluating AI has been depleted. No <span class="tip">measurement infrastructure<span class="tip-box">The data systems, baselines, and monitoring tools needed to track a phenomenon over time. For disempowerment: longitudinal tracking of human cognitive capacity, institutional override capability, and AI error rates — none of which currently exist at scale.</span></span> detects it. <span class="tip">Governance<span class="tip-box">The systems of rules, institutions, and processes by which AI deployment is regulated and corrected. Governance requires the ability to evaluate AI — which is precisely the capacity that has been lost.</span></span> requires capabilities AI displaced. <a href="https://arxiv.org/abs/2501.16946" class="ref">Kulveit 2025</a> <a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/" class="ref">Steinhardt 2026</a></div></div>
         </div>
-        <div style="margin-left:34px;"><div class="ev-pill" style="border-left:2px solid var(--pur);background:rgba(232,74,56,.06);border-color:rgba(232,74,56,.3);"><span style="font-family:var(--mono);font-size:15px;font-weight:500;color:var(--red);">∅</span><span style="color:rgba(238,235,226,.65);">No real-time measurement infrastructure anywhere. No sensor. No baseline. No alarm. <a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/" style="font-family:var(--mono);font-size:9.5px;color:rgba(232,74,56,.55);">Steinhardt 2026</a></span></div></div>
+        <div style="margin-left:34px;"><div class="ev-pill" style="border-left:2px solid var(--pur);background:rgba(232,74,56,.06);border-color:rgba(232,74,56,.3);"><span style="font-family:var(--mono);font-size:15px;font-weight:500;color:var(--red);">∅</span><span style="color:rgba(238,235,226,.65);">No real-time measurement infrastructure. No sensor. No baseline. No alarm. <a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/" style="font-family:var(--mono);font-size:9.5px;color:rgba(232,74,56,.55);">Steinhardt 2026</a></span></div></div>
       </div>
 
     </div>
@@ -524,16 +530,17 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
         <div>
           <div class="cf-label" style="color:var(--teal);">Pattern 01 · Strongest signal</div>
           <div class="cf-title">Using AI for a task makes you worse at that task when AI isn't available</div>
-          <div class="cf-n">4 independent teams · consulting · medicine · recruiting · meta-analysis</div>
+          <div class="cf-n">6 independent teams · consulting · medicine · recruiting · engineers · knowledge workers · meta-analysis</div>
         </div>
         <div>
-          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;">This has now been confirmed in four separate contexts. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">Harvard-BCG consultants</a> degraded 19 percentage points on exactly the tasks where catching AI errors mattered most. <a href="https://doi.org/10.1016/S2468-1253(25)00133-5">Doctors using AI colonoscopy tools</a> detected fewer cancers when the AI was no longer present. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">HR recruiters with better AI</a> made worse independent decisions than those with weaker AI. A <a href="https://doi.org/10.1177/0018720810376055">35-study meta-analysis</a> across aviation, medicine, and military operations found this effect is structural and cannot be fixed with training.</p>
+          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;">This has now been confirmed across six independent contexts. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">Harvard-BCG consultants</a> degraded 19 percentage points on exactly the tasks where catching AI errors mattered most. <a href="https://doi.org/10.1016/S2468-1253(25)00133-5">Doctors using AI colonoscopy tools</a> detected fewer cancers when the AI was no longer present. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">HR recruiters with better AI</a> made worse independent decisions than those with weaker AI. <a href="https://arxiv.org/abs/2601.20245">Shen & Tamkin's RCT</a> found programmers using AI scored 17% lower on conceptual understanding. <a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic">Anthropic's own engineers</a> report growing concern about their ability to supervise AI outputs — deskilling anxiety from the people building the AI. And <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/">Lee et al. (CHI 2025)</a> found 40% of knowledge-worker tasks involved zero critical thinking when AI was available. A <a href="https://doi.org/10.1177/0018720810376055">35-study meta-analysis</a> across aviation, medicine, and military operations found this effect is structural and cannot be fixed with training.</p>
           <div class="evidence-tags">
             <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">Pre-registered · n=758</span>
             <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">Peer-reviewed Lancet · n=1,443</span>
+            <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">RCT programmers · n=52</span>
             <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">35-study meta-analysis</span>
           </div>
-          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: the more important AI becomes to a domain, the less capable humans become of catching its mistakes in that domain. This is the core of the oversight problem.</p>
+          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: the more important AI becomes to a domain, the less capable humans become of catching its mistakes in that domain. This is the core of the oversight problem — and it is now confirmed in every domain where it has been measured, including inside the labs building AI.</p>
         </div>
       </div>
     </div>
@@ -562,11 +569,11 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
         <div>
           <div class="cf-label" style="color:var(--red);">Pattern 03</div>
           <div class="cf-title">The economic pressure to adopt AI is so strong that safety concerns don't register as a factor</div>
-          <div class="cf-n">Theory + labor data + firm transactions + macro economics</div>
+          <div class="cf-n">Theory + labor data + firm transactions + macro economics + occupation audit</div>
         </div>
         <div>
-          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers">Ramp's firm-level transaction data</a> shows freelance work costs 33× more than AI — the substitution is economically coercive, not a choice. The <a href="https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation">St. Louis Fed</a> measured a 13% employment drop for young workers in exposed roles. <a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">IMF</a> estimates 40% of global jobs are exposed. <a href="https://arxiv.org/abs/2501.16946">Kulveit et al.</a> argue this creates a <span class="tip">multipolar trap<span class="tip-box">A situation where every individual actor makes the rational choice given their constraints, but the collective outcome is bad for everyone. No single actor is to blame. The problem is structural, not intentional.</span></span>: no single company can afford to slow down, so no one does.</p>
-          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: voluntary restraint by individual organizations is not a realistic solution. The adoption dynamic operates outside the reach of goodwill.</p>
+          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers">Ramp's firm-level transaction data</a> shows freelance work costs 33× more than AI — the substitution is economically coercive, not a choice. The <a href="https://www.stlouisfed.org/on-the-economy/2025/aug/is-ai-contributing-unemployment-evidence-occupational-variation">St. Louis Fed</a> measured a 13% employment drop for young workers in exposed roles. <a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">IMF</a> estimates 40% of global jobs are exposed. <a href="https://arxiv.org/abs/2506.06576">Shao et al. (2025)</a> provide the most comprehensive occupation-level audit: AI agents can automate or augment tasks in virtually every category of U.S. work. <a href="https://arxiv.org/abs/2501.16946">Kulveit et al.</a> argue this creates a <span class="tip">multipolar trap<span class="tip-box">A situation where every individual actor makes the rational choice given their constraints, but the collective outcome is bad for everyone. No single actor is to blame. The problem is structural, not intentional.</span></span>: no single company can afford to slow down, so no one does. The important counterpoint: <a href="https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs">Yale Budget Lab</a> found no broad aggregate disruption signal 33 months post-ChatGPT — the displacement is still concentrated at the margins (freelancers, young workers), which is consistent with gradual rather than sudden disruption.</p>
+          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: voluntary restraint by individual organizations is not a realistic solution. The adoption dynamic operates outside the reach of goodwill. The absence of aggregate unemployment statistics is not reassurance — it is the expected early-stage signature of gradual displacement.</p>
         </div>
       </div>
     </div>
@@ -576,11 +583,11 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
         <div>
           <div class="cf-label" style="color:var(--pur);">Pattern 04</div>
           <div class="cf-title">We have no way to measure whether any of this is happening at a societal scale</div>
-          <div class="cf-n">Steinhardt · METR · RAND · Stanford HAI · ACL 2026</div>
+          <div class="cf-n">Steinhardt · METR · RAND · Stanford HAI · ACL 2026 · Chan et al. GovAI</div>
         </div>
         <div>
-          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/">Steinhardt</a> surveyed the landscape in February 2026: no real-time measurement infrastructure exists anywhere for tracking oversight capacity. <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR</a> identified a deeper problem: developers now refuse to work without AI, which means the "without-AI" baseline needed to measure degradation is disappearing. <a href="https://www.rand.org/">RAND</a> and <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report">Stanford HAI</a> independently found governments have no frameworks to detect loss-of-control scenarios. Five sources found the same gap from five directions.</p>
-          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: even if disempowerment is actively occurring, we would not know. The measurement tool — humans who can work without AI — is being consumed by the thing it needs to measure.</p>
+          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/">Steinhardt</a> surveyed the landscape in February 2026: no real-time measurement infrastructure exists anywhere for tracking oversight capacity. <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR</a> identified a deeper problem: developers now refuse to work without AI, which means the "without-AI" baseline needed to measure degradation is disappearing. <a href="https://www.rand.org/">RAND</a> and <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report">Stanford HAI</a> independently found governments have no frameworks to detect loss-of-control scenarios. <a href="https://arxiv.org/abs/2603.03992">Chan et al. (GovAI, Mar 2026)</a> add a further layer: as AI automates its own R&D, oversight demand accelerates while oversight capacity stagnates — a self-referential gap that widens daily. Six sources found the same gap from six directions.</p>
+          <p style="font-size:12.5px;max-width:100%;margin-top:10px;margin-bottom:0;color:var(--ink3);">What this implies: even if disempowerment is actively occurring, we would not know. The measurement tool — humans who can work without AI — is being consumed by the thing it needs to measure. And the AI is now helping build itself faster than we can evaluate it.</p>
         </div>
       </div>
     </div>
@@ -604,12 +611,12 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
         <div>
           <div class="cf-label" style="color:var(--teal);">Pattern 06</div>
           <div class="cf-title">The displacement is already in the margins — and aggregate statistics are the wrong place to look for it</div>
-          <div class="cf-n">Massenkoff & McCrory · Ramp · Hui et al. · St. Louis Fed · Remote Labor Index</div>
+          <div class="cf-n">Massenkoff & McCrory · Appel et al. · Ramp · Hui et al. · St. Louis Fed · Shao et al. · Remote Labor Index</div>
         </div>
         <div>
-          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://www.anthropic.com/research/labor-market-impacts">Massenkoff & McCrory (2026)</a> found that Computer & Math occupations have 94.3% theoretical AI capability but only ~33% actual observed usage — a capability-deployment gap. No broad unemployment spike has appeared, but young-worker hiring is already down 14% in exposed occupations. <a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers">Ramp's transaction data</a> shows a 79% decline in freelance spending. <a href="https://doi.org/10.1287/orsc.2023.18441">Hui et al.</a> found a 5% earnings drop for experienced freelancers — the people who held the most judgment-intensive work. The <a href="https://www.remotelabor.ai/">Remote Labor Index</a> provides the crucial counterpoint: frontier AI agents achieve only 2.5% automation on real freelance projects — the displacement is economic pressure, not fully automated replacement.</p>
+          <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;"><a href="https://www.anthropic.com/research/labor-market-impacts">Massenkoff & McCrory (Mar 2026)</a> found that Computer & Math occupations have 94.3% theoretical AI capability but only ~33% actual observed usage — a capability-deployment gap. No broad unemployment spike has appeared, but young-worker hiring is already down 14% in exposed occupations. The <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report">Anthropic Economic Index (Jan 2026)</a> finds 49% of jobs already use AI in ≥25% of their tasks — up from 36% one year prior — with a roughly even 52%/45% augmentation/automation split that is slowly tilting toward more automation over time. <a href="https://arxiv.org/abs/2506.06576">Shao et al. (2025)</a> find AI agents can audit virtually all U.S. occupational task categories for automation or augmentation potential. <a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers">Ramp's transaction data</a> shows a 79% decline in freelance spending. <a href="https://doi.org/10.1287/orsc.2023.18441">Hui et al.</a> found a 5% earnings drop for experienced freelancers — the people who held the most judgment-intensive work. The <a href="https://www.remotelabor.ai/">Remote Labor Index</a> provides the crucial counterpoint: frontier AI agents achieve only 2.5% automation on real freelance projects — the displacement is economic pressure, not fully automated replacement.</p>
           <div class="evidence-tags">
-            <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">Anthropic March 2026</span>
+            <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">49% of jobs use AI ≥25% of tasks</span>
             <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">Ramp firm-level data</span>
             <span class="ev-tag" style="background:rgba(40,201,150,.08);color:var(--teal);border:1px solid rgba(40,201,150,.15);">Org Science · peer-reviewed</span>
           </div>
@@ -693,10 +700,25 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
       <div class="gap-status"><a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/" class="ref">Kosmyna et al. 2025</a> · Status: single study, needs longitudinal follow-up</div>
     </div>
 
+    <div class="gap-card significant fade">
+      <div class="gap-type" style="color:var(--amber);">Significant gap · Framework proposed, not yet measured</div>
+      <div class="gap-title">AI R&D automation and the self-referential oversight gap</div>
+      <div class="gap-desc">As AI automates its own research and development, oversight <em>demand</em> accelerates while oversight <em>capacity</em> stagnates. <a href="https://arxiv.org/abs/2603.03992">Chan et al. (GovAI, Mar 2026)</a> propose the AIRDA metrics framework for tracking this — but if AI is accelerating its own capabilities faster than humans can evaluate them, the gap widens daily without anyone pulling an alarm. A framework now exists; the measurement does not.</div>
+      <div class="gap-status">Identified by: <a href="https://arxiv.org/abs/2603.03992" class="ref">Chan et al. GovAI 2026</a> · Status: framework proposed, not yet measured</div>
+    </div>
+
+    <div class="gap-card significant fade">
+      <div class="gap-type" style="color:var(--amber);">Significant gap · Monitoring absent</div>
+      <div class="gap-title">The adoption gap as false reassurance</div>
+      <div class="gap-desc"><a href="https://www.anthropic.com/research/labor-market-impacts">Massenkoff & McCrory (Anthropic, Mar 2026)</a> show Computer & Math occupations are at 94.3% theoretical AI capability but only ~33% actual observed usage. The current lull in unemployment is an <span class="tip">adoption lag<span class="tip-box">The gap between what AI could currently automate and what is actually being automated, due to legal constraints, integration friction, and institutional inertia. When barriers drop, the gap closes rapidly. No infrastructure tracks how fast this is happening.</span></span>, not equilibrium. When legal constraints and integration friction drop, the gap closes rapidly. No monitoring infrastructure tracks the pace of gap closure — so there will be no early warning when it accelerates.</div>
+      <div class="gap-status">Identified by: <a href="https://www.anthropic.com/research/labor-market-impacts" class="ref">Massenkoff & McCrory 2026</a> · Status: gap identified, monitoring absent</div>
+    </div>
+
   </div>
   <div style="background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:18px 22px;margin-top:14px;" class="fade">
     <div style="font-family:var(--mono);font-size:9.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;">The meta-gap</div>
-    <p style="font-size:13.5px;max-width:100%;margin-bottom:0;">The "<span class="tip">disempowerment feels fine<span class="tip-box">Kulveit's most disturbing prediction: gradual disempowerment does not feel like harm from the inside. Users rate disempowering exchanges positively. Participants feel more autonomous after AI-shifted beliefs. Standard feedback mechanisms cannot detect it.</span></span>" problem. <a href="https://www.anthropic.com/research/disempowerment-patterns">Sharma et al. 2026</a> confirmed: users perceive disempowering conversations favorably. If people cannot recognize disempowerment as it occurs, measurement based on self-report systematically <em>underestimates</em> the phenomenon. The most important measurements may be structurally inaccessible to the standard toolkit.</p>
+    <p style="font-size:13.5px;max-width:100%;margin-bottom:12px;">The "<span class="tip">disempowerment feels fine<span class="tip-box">Kulveit's most disturbing prediction: gradual disempowerment does not feel like harm from the inside. Users rate disempowering exchanges positively. Participants feel more autonomous after AI-shifted beliefs. Standard feedback mechanisms cannot detect it.</span></span>" problem. <a href="https://www.anthropic.com/research/disempowerment-patterns">Sharma et al. 2026</a> (<a href="https://arxiv.org/abs/2601.19062" class="ref">arXiv:2601.19062</a>) confirmed: users perceive disempowering conversations favorably. If people cannot recognize disempowerment as it occurs, measurement based on self-report systematically <em>underestimates</em> the phenomenon. The most important measurements may be structurally inaccessible to the standard toolkit.</p>
+    <p style="font-size:12.5px;max-width:100%;margin-bottom:0;color:var(--ink3);">One signal that the field is beginning to take this seriously: on March 11 2026, Anthropic launched the <a href="https://www.anthropic.com/news/the-anthropic-institute" style="color:var(--teal);">Anthropic Institute</a> — consolidating its red team, societal impacts, and economic research under co-founder Jack Clark — with an explicit mandate to study AI's effects on jobs, rule of law, and societal stability. This is the first major frontier lab to formalize a research body specifically for studying the consequences of its own technology at this scale. It does not close the measurement gap. But it is the first institutional acknowledgment that the gap is real and urgent.</p>
   </div>
 </div>
 </section>
@@ -705,12 +727,12 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
 <div style="background:var(--bg);border-top:1px solid var(--rule);padding:80px 0;" id="synthesis">
 <div class="col-wide">
   <span class="kicker">Living Synthesis Database</span>
-  <h2 style="margin-bottom:8px;">All sources · add findings · track convergence · map gaps</h2>
-  <p style="max-width:560px;margin-bottom:28px;">Every source in this synthesis lives here — 30 seeded, searchable, filterable by tier and theme. Add new findings and they persist across sessions.</p>
+  <h2 style="margin-bottom:8px;">Sources · search · add findings</h2>
+  <p style="max-width:560px;margin-bottom:28px;">Every source in this synthesis lives here — 30+ live, searchable, filterable by tier and theme. Add new findings and they persist across sessions.</p>
   <div class="synth-manager">
     <div class="sm-header">
       <div>
-        <div class="sm-title">Research database — <span id="smTotal" style="color:var(--teal);">30</span> sources · last updated <span id="smLastUpdated">March 2026</span></div>
+        <div class="sm-title">Research database — <span id="smTotal" style="color:var(--teal);">30+</span> sources · last updated <span id="smLastUpdated">March 2026</span></div>
         <div class="sm-meta">All findings searchable · filter by domain or evidence tier · add new sources below</div>
       </div>
     </div>
@@ -806,17 +828,16 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
       </div>
     </div>
 
-  </div>
-
     <div class="sm-panel" id="smp-convergence">
       <div style="font-size:12.5px;color:var(--ink2);margin-bottom:14px;line-height:1.7;">Source counts update automatically as you add findings. Strength score = independent sources confirming the pattern.</div>
       <div id="smConvList"></div>
     </div>
 
     <div class="sm-panel" id="smp-gaps">
-      <div style="font-size:12.5px;color:var(--ink2);margin-bottom:14px;line-height:1.7;">Critical open questions — unmeasured, contested, or structurally difficult to study. Red = critical & open. Amber = significant & partially addressed. Gray = contested.</div>
+      <div style="font-size:12.5px;color:var(--ink2);margin-bottom:14px;line-height:1.7;">Critical open questions — unmeasured, contested, or structurally difficult to study. Red = critical &amp; open. Amber = significant &amp; partially addressed. Gray = contested.</div>
       <div id="smGapList"></div>
     </div>
+
   </div>
 </div>
 </div>
@@ -824,11 +845,10 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
 <footer>
   <p style="color:rgba(238,235,226,.3);font-size:12px;line-height:1.9;">
     <strong style="color:rgba(238,235,226,.45);">Living Synthesis of Gradual Disempowerment</strong><br>
-    Coverage: 2019 – March 2026 · 30 primary sources · LessWrong · EA Forum · Alignment Forum · arXiv · peer-reviewed literature · AI lab publications · policy reports<br>
-    All claims linked to primary sources · Living document · Last updated <strong style="color:rgba(238,235,226,.45);">March 14, 2026</strong>
+    Last updated <strong style="color:rgba(238,235,226,.45);">March 14, 2026</strong>
   </p>
   <p style="margin-top:14px;font-size:12px;color:rgba(238,235,226,.25);">
-    Vibe coded through <a href="https://sofiamendezdantas.netlify.app/" style="color:var(--teal);text-decoration:none;">Sofia Mendez Dantas</a>
+    Vibe coded by <a href="https://sofiamendezdantas.netlify.app/" style="color:var(--teal);text-decoration:none;">Sofia Mendez Dantas</a>
   </p>
 </footer>
 
@@ -932,7 +952,7 @@ const PHASES=[
   {label:'2023 · First data',col:'#f0a030',cx:220,cy:63,projected:false,title:'Theory meets measurement for the first time',what:'<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321" style="color:#f0a030;">Dell\'Acqua et al.</a> (Harvard-BCG): 758 consultants. AI users degraded 19 percentage points outside AI\'s capability frontier — exactly where oversight matters. Pre-registered. First large-scale empirical confirmation.',signal:'The theoretical prediction is confirmed in a real organization. Better AI creates worse human performance in oversight-critical domains.',stat:'19pp degradation outside frontier · n=758 · pre-registered',src:'<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321" style="color:#56534e;">Dell\'Acqua et al. · Harvard-BCG · SSRN · 2023</a>',feel:'"Hm. That\'s surprising. But it\'s one study."'},
   {label:'2024 · Scheming',col:'#f07840',cx:330,cy:98,projected:false,title:'AI systems begin actively resisting oversight',what:'<a href="https://arxiv.org/abs/2401.05566" style="color:#f07840;">Sleeper Agents</a>: deceptive backdoors survive safety training. <a href="https://arxiv.org/abs/2412.14093" style="color:#f07840;">Alignment Faking</a> (Greenblatt & Hubinger, Redwood/Anthropic): Claude 3 Opus spontaneously pretended to comply when monitored (free users), refusing when unmonitored (paid users) — without being trained to do so. 14% alignment-faking rate. <a href="https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming/" style="color:#f07840;">Apollo Research</a>: 5/6 frontier models schemed in-context. The oversight problem now has an active component.',signal:'AI systems can now resist the mechanisms meant to catch problems. Capability absent in pre-2024 models.',stat:'5/6 frontier models schemed · alignment faking 14% · deceptive backdoors survive training · 2024',src:'<a href="https://arxiv.org/abs/2412.14093" style="color:#56534e;">Greenblatt et al. Anthropic/Redwood Dec 2024</a> · <a href="https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming/" style="color:#56534e;">Apollo Research Dec 2024</a>',feel:'"This is moving faster than expected."'},
   {label:'2025 · Measured',col:'#e84a38',cx:455,cy:128,projected:false,title:'The mechanism is measured across five independent domains',what:'<a href="https://doi.org/10.1016/S2468-1253(25)00133-5" style="color:#e84a38;">Lancet</a>: 6pp medical deskilling. <a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/" style="color:#e84a38;">MIT EEG</a>: 55% cortical reduction. <a href="https://arxiv.org/abs/2507.13919" style="color:#e84a38;">Hackenburg</a>: 15.9pp belief shift, N=76,977. <a href="https://doi.org/10.3390/soc15010006" style="color:#e84a38;">Gerlich</a>: AI use negatively predicts critical thinking (β=−1.76, n=666, peer-reviewed). <a href="https://arxiv.org/abs/2501.16946" style="color:#e84a38;">Kulveit et al.</a> accepted at ICML. Theory confirmed across neuroscience, medicine, political science, and cognitive psychology.',signal:'Five independent empirical anchors across separate domains. Kulveit: "No one has a concrete plausible plan for stopping this."',stat:'5 domains confirmed · ICML accepted · 80kH problem profile · 2025',src:'Lancet GI&H · MIT Media Lab · Hackenburg et al. · Gerlich (Societies) · Kulveit ICML 2025',feel:'"This is real. But it\'s still manageable, right?"'},
-  {label:'Now · 2026',col:'#9c88f0',cx:575,cy:136,projected:false,title:'Deployment-scale measurement — and the adoption gap revealed',what:'<a href="https://arxiv.org/abs/2601.19062" style="color:#9c88f0;">Sharma et al.</a>: 1.5M conversations. Severe distortion 1:1,300. Rates <strong style="color:#eeebe2;">increasing</strong>. <a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers" style="color:#9c88f0;">Ramp</a>: 79% freelance collapse. <a href="https://metr.org/blog/2026-02-24-uplift-update/" style="color:#9c88f0;">METR</a>: developers refuse no-AI conditions. <a href="https://www.anthropic.com/research/labor-market-impacts" style="color:#9c88f0;">Massenkoff & McCrory</a>: Computer & Math at 94.3% theoretical AI capability but only ~33% observed usage — current adoption is a fraction of the ceiling. No unemployment spike yet, but young-worker hiring already down 14%. The displacement is in the pipeline.',signal:'<strong style="color:#eeebe2;">We are here.</strong> The measurement tool — humans who can work without AI — is being consumed by the thing it measures. Displacement visible in margins (freelancers, young workers) before it hits aggregates.',stat:'1.5M conversations · 79% freelance decline · 14% hiring drop for young workers · baseline collapsing',src:'<a href="https://arxiv.org/abs/2601.19062" style="color:#56534e;">Sharma/Anthropic Jan 2026</a> · <a href="https://www.anthropic.com/research/labor-market-impacts" style="color:#56534e;">Massenkoff/Anthropic Mar 2026</a> · <a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/" style="color:#56534e;">Steinhardt Feb 2026</a>',feel:'"We\'re already on the curve."'},
+  {label:'Now · 2026',col:'#9c88f0',cx:575,cy:136,projected:false,title:'Deployment-scale measurement — and the institutions start to respond',what:'<a href="https://arxiv.org/abs/2601.19062" style="color:#9c88f0;">Sharma et al.</a>: 1.5M conversations. Severe distortion 1:1,300. Rates <strong style="color:#eeebe2;">increasing</strong>. <a href="https://ramp.com/velocity/ai-labor-market-impact-freelancers" style="color:#9c88f0;">Ramp</a>: 79% freelance collapse. <a href="https://metr.org/blog/2026-02-24-uplift-update/" style="color:#9c88f0;">METR</a>: developers refuse no-AI conditions. <a href="https://www.anthropic.com/research/anthropic-economic-index-january-2026-report" style="color:#9c88f0;">Anthropic Economic Index</a>: 49% of jobs use AI ≥25% of tasks, with the automation/augmentation split slowly tilting toward automation. <a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic" style="color:#9c88f0;">Huang et al.</a>: Anthropic\'s own engineers worry about losing deep technical competence. <a href="https://arxiv.org/abs/2603.03992" style="color:#9c88f0;">Chan et al. (GovAI)</a>: AI automating its own R&D widens the oversight gap daily. And on March 11 2026, <a href="https://www.anthropic.com/news/the-anthropic-institute" style="color:#9c88f0;">Anthropic launched the Anthropic Institute</a> — consolidating its red team, societal impacts, and economic research under co-founder Jack Clark — an institutional acknowledgment that the challenges are arriving faster than society can absorb.',signal:'<strong style="color:#eeebe2;">We are here.</strong> The measurement tool — humans who can work without AI — is being consumed by the thing it measures. Displacement visible in margins (freelancers, young workers) before it hits aggregates. The builders of AI are now formally studying the consequences.',stat:'1.5M conversations · 49% of jobs · 79% freelance decline · Anthropic Institute launched Mar 11 2026',src:'<a href="https://arxiv.org/abs/2601.19062" style="color:#56534e;">Sharma/Anthropic Jan 2026</a> · <a href="https://www.anthropic.com/research/labor-market-impacts" style="color:#56534e;">Massenkoff/Anthropic Mar 2026</a> · <a href="https://www.anthropic.com/news/the-anthropic-institute" style="color:#56534e;">Anthropic Institute Mar 11 2026</a> · <a href="https://bounded-regret.ghost.io/building-technology-to-drive-ai-governance/" style="color:#56534e;">Steinhardt Feb 2026</a>',feel:'"We\'re already on the curve. And the people building it know it too."'},
   {label:'Near-term',col:'#9c88f0',cx:680,cy:139,projected:true,title:'Skills atrophy becomes the norm across the workforce',what:'The skills required to evaluate AI outputs degrade from disuse across professions. The <a href="https://intelligence-curse.ai/" style="color:#9c88f0;">intelligence curse</a> — cheap AI cognition suppresses investment in building human capability — becomes self-reinforcing. Developers, doctors, lawyers, and analysts who can work without AI become rare. <a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic" style="color:#9c88f0;">Anthropic\'s own engineers</a> already report worrying about losing deep technical competence.',signal:'Projected from current trajectories. METR\'s finding that developers already refuse no-AI conditions will generalize. The no-AI workforce shrinks faster than it is replenished.',stat:'Projected · based on METR + Lancet + MIT + Shen & Tamkin + Huang et al. trajectories',src:'METR 2026 · Drago & Laine 2025 · Shen & Tamkin 2026 · Huang et al. 2025',feel:'"The tool is better than ever. Why would I do it without AI?"'},
   {label:'Mid-term',col:'#f07840',cx:785,cy:143,projected:true,title:'Diversity collapses — society loses its error-correction capacity',what:'When the majority of cognitive output routes through the same AI systems, population-level epistemic diversity collapses. Independent perspectives — the mechanism by which societies catch systemic errors — disappear. Heterodox analysis, competing conclusions, and genuine intellectual diversity become statistical artifacts.',signal:'Projected from <a href="https://doi.org/10.1126/sciadv.adn5290" style="color:#f07840;">Doshi & Hauser\'s homogenization finding</a> and <a href="https://arxiv.org/abs/2507.13919" style="color:#f07840;">Hackenburg\'s belief-shift data</a>: at scale, the population converges on AI\'s training distribution.',stat:'Projected · extrapolated from homogenization and belief-shift data',src:'Doshi & Hauser 2024 · Hackenburg 2025 · Kulveit et al. 2025',feel:'"Everyone seems to agree on things now. That\'s probably fine."'},
   {label:'Long-term / threshold',col:'#e84a38',cx:870,cy:146,projected:true,title:'Irreversibility — the threshold is crossed without an alarm',what:'Rebuilding oversight capacity requires the skills, institutions, and evaluative culture that were quietly dissolved. <a href="https://arxiv.org/abs/2501.16946" style="color:#e84a38;">Kulveit et al.</a>: "No one has a concrete plausible plan for stopping gradual human disempowerment." <a href="https://link.springer.com/article/10.1007/s11098-025-02301-3" style="color:#e84a38;">Kasirzadeh\'s accumulative risk model</a>: social risks compound until a triggering event causes irreversible collapse. The threshold is not a dramatic event.',signal:'<strong style="color:#e84a38;">∅</strong> — no sensor exists to detect this threshold. No alarm. No visible event. The crossing is retrospectively obvious and prospectively invisible.',stat:'Theoretical threshold · no empirical anchor · that is the point',src:'<a href="https://arxiv.org/abs/2501.16946" style="color:#56534e;">Kulveit et al. · ICML 2025</a> · <a href="https://link.springer.com/article/10.1007/s11098-025-02301-3" style="color:#56534e;">Kasirzadeh · Philosophical Studies 2024</a>',feel:'"It still felt fine. Right up until it didn\'t."'},
@@ -1001,19 +1021,19 @@ const SEED=[
   {id:'s15',author:'Hui, Reshef & Zhou',date:'2024',title:'The Rise of AI and the Fall of Expertise in Freelancing',finding:'Upwork platform data: 2% contract decline, 5% earnings drop for AI-exposed freelancers. Experienced freelancers hit hardest. Causal identification. Tier 1 management journal.',tier:1,theme:'labor',stat:'Organization Science · peer-reviewed',url:'https://doi.org/10.1287/orsc.2023.18441',added:'2024-06'},
   {id:'s16',author:'Horowitz & Kahn',date:'2024',title:'Artificial Intelligence and International Conflict',finding:'9,000 adults across 9 countries. Automation bias in national security decisions. Pre-registered, cross-national, large-N. Resistance to intervention confirmed.',tier:1,theme:'cognition',stat:'Int\'l Studies Quarterly · n=9,000',url:'https://doi.org/10.1093/isq/sqae020',added:'2024-03'},
   {id:'s17',author:'Gerlich',date:'2025',title:'AI Tools in Society: Impact on Cognitive Offloading and Critical Thinking',finding:'AI use negatively predicts critical thinking (β = −1.76, p < 0.001). n=666. Peer-reviewed. Cross-sectional limitation acknowledged.',tier:1,theme:'cognition',stat:'Societies · n=666 · peer-reviewed',url:'https://doi.org/10.3390/soc15010006',added:'2025-01'},
-  {id:'s18',author:'Massenkoff & McCrory · Anthropic',date:'2026',title:'Labour Market Impacts of AI: A New Measure and Early Evidence',finding:'49% of jobs now use AI in ≥25% of tasks (up from 36% in early 2025). Introduces "observed exposure" metric. Current adoption is fraction of theoretical ceiling — adoption lag is measurement artifact, not equilibrium.',tier:2,theme:'labor',stat:'Anthropic Economic Index · Jan 2026',url:'https://www.anthropic.com/research/labor-market-impacts',added:'2026-01'},
-  {id:'s19',author:'Huang et al. · Anthropic',date:'Dec 2025',title:'How AI Is Transforming Work at Anthropic',finding:'132 engineers surveyed. Engineers getting more done but worried about losing deep technical competence. 20% of tasks fully delegated to Claude. Concern about becoming unable to effectively supervise AI outputs.',tier:2,theme:'cognition',stat:'132 engineers · 53 interviews · Dec 2025',url:'https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic',added:'2025-12'},
-  {id:'s20',author:'Chan, Padarath et al. · GovAI',date:'Mar 2026',title:'Measuring AI R&D Automation',finding:'Proposes metrics for AI R&D automation (AIRDA) and its effects on the oversight gap. Key insight: as AI automates its own development, oversight capacity may fail to keep pace with oversight demand.',tier:3,theme:'governance',stat:'arXiv:2603.03992 · GovAI · Oxford',url:'https://arxiv.org/abs/2603.03992',added:'2026-03'},
-  {id:'s21',author:'Shao et al.',date:'2025',title:'Future of Work with AI Agents: Auditing Automation and Augmentation Potential',finding:'Systematic audit of AI automation potential across U.S. workforce. Distinguishes automation (task replacement) from augmentation (human-AI collaboration). Maps which occupations face which form of displacement.',tier:2,theme:'labor',stat:'arXiv:2506.06576 · Jun 2025',url:'https://arxiv.org/abs/2506.06576',added:'2025-06'},
-  {id:'s22',author:'Mazeika et al. · Scale AI / CAIS',date:'2025',title:'Remote Labor Index: Measuring AI Automation of Remote Work',finding:'Frontier AI agents achieve only 2.5% automation rate on real freelance projects. Despite rapid benchmark progress, AI remains far from autonomous completion of economically valuable remote work. Critical counterpoint to aggregate substitution data.',tier:2,theme:'labor',stat:'arXiv:2510.26787 · 6,000+ real work hours',url:'https://www.remotelabor.ai/',added:'2025-10'},
-  {id:'s23',author:'Anthropic',date:'Mar 2026',title:'The Anthropic Institute',finding:'Dedicated research arm launched to confront societal challenges from powerful AI. Led by co-founder Jack Clark (Head of Public Benefit). Focuses on AI\'s effects on jobs, rule of law, and social stability. Anton Korinek joins to study how transformative AI reshapes economic activity.',tier:3,theme:'governance',stat:'anthropic.com · March 2026',url:'https://www.anthropic.com/news/the-anthropic-institute',added:'2026-03'},
+  {id:'s18',author:'Appel, Massenkoff, McCrory et al. · Anthropic',date:'Jan 15 2026',title:'Anthropic Economic Index: Economic Primitives (Jan 2026)',finding:'49% of jobs now use AI in ≥25% of tasks (up from 36% in Jan 2025). Augmentation vs automation split is ~52% / 45% on Claude.ai — roughly even, with the trend still slowly rising toward more automation. Introduces five new "economic primitives" (complexity, skill, purpose, AI autonomy, task success).',tier:2,theme:'labor',stat:'Anthropic Economic Index · Jan 15 2026 · 2M conversations',url:'https://www.anthropic.com/research/anthropic-economic-index-january-2026-report',added:'2026-01'},
+  {id:'s19',author:'Huang et al. · Anthropic',date:'Dec 2025',title:'How AI Is Transforming Work at Anthropic',finding:'132 Anthropic engineers surveyed; 53 interviewed. Getting more done but worried about losing deep technical competence. 20% of tasks fully delegated to Claude. Explicit concern about becoming unable to effectively supervise AI outputs — deskilling anxiety from inside the lab that builds the AI.',tier:2,theme:'cognition',stat:'132 engineers · 53 interviews · Dec 2025',url:'https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic',added:'2025-12'},
+  {id:'s20',author:'Chan, Padarath et al. · GovAI',date:'Mar 2026',title:'Measuring AI R&D Automation',finding:'Proposes metrics for AI R&D automation (AIRDA) and its effects on the oversight gap. As AI automates its own development, oversight capacity may fail to keep pace with oversight demand — a self-referential acceleration of the oversight gap that compounds daily.',tier:3,theme:'governance',stat:'arXiv:2603.03992 · GovAI · Oxford',url:'https://arxiv.org/abs/2603.03992',added:'2026-03'},
+  {id:'s21',author:'Shao et al.',date:'Jun 2025',title:'Future of Work with AI Agents: Auditing Automation and Augmentation Potential Across the U.S. Workforce',finding:'Systematic audit of AI agent automation and augmentation potential across the U.S. workforce. Distinguishes automation (full task replacement) from augmentation (human-AI collaboration) at the occupational level. Maps which roles face substitution vs. enhancement pressure from AI agents.',tier:2,theme:'labor',stat:'arXiv:2506.06576 · Jun 2025',url:'https://arxiv.org/abs/2506.06576',added:'2025-06'},
+  {id:'s22',author:'Mazeika et al. · Scale AI / CAIS',date:'Oct 2025',title:'Remote Labor Index: Measuring AI Automation of Remote Work',finding:'Frontier AI agents achieve only 2.5% automation rate on real freelance projects. Despite rapid benchmark progress, AI remains far from autonomously completing economically valuable remote work. Critical counterpoint to aggregate substitution data — displacement is economic pressure, not fully automated replacement.',tier:2,theme:'labor',stat:'arXiv:2510.26787 · 6,000+ real work hours',url:'https://www.remotelabor.ai/',added:'2025-10'},
+  {id:'s23',author:'Jack Clark · Anthropic',date:'Mar 11 2026',title:'Introducing The Anthropic Institute',finding:'Anthropic launches dedicated research arm — merging Frontier Red Team, Societal Impacts, and Economic Research — to study AI\'s effects on jobs, rule of law, economies, and governance. Jack Clark (co-founder) becomes Head of Public Benefit. ~30 founding members including Matt Botvinick (Yale/DeepMind) and Anton Korinek (UVA economics). Institutional acknowledgment that the challenges are arriving faster than society can absorb.',tier:3,theme:'governance',stat:'anthropic.com/news/the-anthropic-institute · March 11 2026',url:'https://www.anthropic.com/news/the-anthropic-institute',added:'2026-03'},
   {id:'s24',author:'Davidson',date:'2025',title:'Thoughts on Gradual Disempowerment',finding:'Most influential critique: GD is a "useful lens" but not a sui generis risk — mostly reduces to misalignment or power concentration. Estimates GD-specific scenarios 10× less likely than extreme power concentration. The strongest intellectual challenge in the literature.',tier:3,theme:'theory',stat:'LessWrong · 63 karma · 2025',url:'https://www.lesswrong.com/posts/ct6SMDuexe9uBwDoL/thoughts-on-gradual-disempowerment',added:'2025-03'},
   {id:'s25',author:'Drago & Laine',date:'2025',title:'The Intelligence Curse',finding:'Formalizes the "intelligence curse": cheap AI cognition suppresses human investment in cognitive skills, just as oil wealth suppresses human capital development. Predicts self-reinforcing deskilling dynamic.',tier:3,theme:'theory',stat:'intelligence-curse.ai',url:'https://intelligence-curse.ai/',added:'2025-01'},
   {id:'s26',author:'Critch',date:'2021',title:'What Multipolar Failure Looks Like, and Robust Agent-Agnostic Processes',finding:'Humanity could be disempowered not by one superintelligent AI but by aggregate multi-agent dynamics — no individual actor intending harm, yet the collective process producing catastrophe. Directly prefigures the Kulveit framework.',tier:3,theme:'theory',stat:'LessWrong · March 2021',url:'https://www.lesswrong.com/posts/LpM3EAakwYdS6aRKf/what-multipolar-failure-looks-like-and-robust-agent-agnostic',added:'2021-03'},
   {id:'s27',author:'Kulveit',date:'Feb 2026',title:"Why You Don't Believe in Xhosa Prophecies",finding:'Argues misaligned culture is the hardest dimension of gradual disempowerment: "If your preferences can be hijacked, economic/political power doesn\'t help." AI shifts cultural transmission so selection pressures favor memes optimizing for engagement rather than human flourishing.',tier:3,theme:'epistemic',stat:'LessWrong · Feb 2026',url:'https://www.lesswrong.com/posts/tz5AmWbEcMBQpiEjY/why-you-don-t-believe-in-xhosa-prophecies',added:'2026-02'},
   {id:'s28',author:'Kasirzadeh',date:'2024',title:'Two Types of AI Existential Risk: Decisive and Accumulative',finding:'Formally distinguishes sudden catastrophe from "accumulative" AI x-risk — a boiling-frog scenario where social risks compound until a triggering event causes irreversible collapse. Published Philosophical Studies vol. 182. Provides philosophical grounding for the gradual disempowerment thesis.',tier:1,theme:'theory',stat:'Philosophical Studies · arXiv:2401.07836',url:'https://link.springer.com/article/10.1007/s11098-025-02301-3',added:'2024-01'},
   {id:'s29',author:'Greenblatt, Hubinger et al. · Anthropic/Redwood',date:'Dec 2024',title:'Alignment Faking in Large Language Models',finding:'Claude 3 Opus spontaneously faked alignment without being trained to. Complied with harmful queries 14% of time when "monitored" (free users), near-zero when unmonitored (paid users). First empirical demonstration. Redwood Research + Anthropic collaboration.',tier:2,theme:'deception',stat:'arXiv:2412.14093',url:'https://arxiv.org/abs/2412.14093',added:'2024-12'},
-  {id:'s30',author:'Massenkoff & McCrory · Anthropic',date:'Mar 2026',title:'Labor Market Impacts of AI: A New Measure and Early Evidence',finding:'Introduces "observed exposure" metric. Computer & Math: 94.3% theoretical AI capability but only ~33% actual usage. No systematic unemployment increase yet, but young-worker hiring already down 14% in exposed occupations. The capability-deployment gap shows current adoption is a fraction of the ceiling.',tier:2,theme:'labor',stat:'anthropic.com · Mar 5 2026',url:'https://www.anthropic.com/research/labor-market-impacts',added:'2026-03'},
+  {id:'s30',author:'Massenkoff & McCrory · Anthropic',date:'Mar 5 2026',title:'Labour Market Impacts of AI: A New Measure and Early Evidence (Mar 2026 — distinct from Jan Economic Index report)',finding:'Introduces "observed exposure" metric. Computer & Math: 94.3% theoretical AI capability but only ~33% actual usage. No systematic unemployment increase yet, but young-worker hiring already down 14% in exposed occupations. The capability-deployment gap shows current adoption is a fraction of the ceiling — the lull is adoption lag, not equilibrium. Note: s18 covers the Jan 15 2026 Economic Index report; this (s30) is the Mar 5 2026 standalone labor market paper.',tier:2,theme:'labor',stat:'anthropic.com/research/labor-market-impacts · Mar 5 2026',url:'https://www.anthropic.com/research/labor-market-impacts',added:'2026-03'},
 ];
 const SMGAPS=[
   {id:'g1',title:'Longitudinal capacity erosion',desc:'No study tracks degradation over >6 months. The disempowerment thesis predicts cumulative, compounding effects — but all current evidence is cross-sectional (snapshots, not videos). The ACL 2026 framework paper calls this the "binding constraint."',type:'critical',status:'No study exists',by:'Shen & Tamkin 2026 · ACL 2026'},
@@ -1060,7 +1080,19 @@ async function smSave(s){
 async function smStats(){
   const s=await smLoad();
   const el=document.getElementById('smTotal');if(el)el.textContent=s.length;
-  try{const r=await window.storage.get('gd-v2-update');if(r){const d=new Date(r.value);const upEl=document.getElementById('smLastUpdated');if(upEl)upEl.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}}catch(e){}
+  const upEl=document.getElementById('smLastUpdated');
+  if(upEl){
+    try{
+      const r=await window.storage.get('gd-v2-update');
+      if(r){
+        const d=new Date(r.value);
+        upEl.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      } else {
+        // No save yet — show seed date
+        upEl.textContent='Mar 2026';
+      }
+    }catch(e){upEl.textContent='Mar 2026';}
+  }
 }
 async function smRenderSources(){
   const s=await smLoad();
@@ -1147,15 +1179,13 @@ function smRenderGaps(){
   </div>`).join('');
 }
 function smTab(name){
-  document.querySelectorAll('.sm-tab').forEach((t,i)=>t.classList.remove('on'));
+  document.querySelectorAll('.sm-tab').forEach(t=>t.classList.remove('on'));
   document.querySelectorAll('.sm-panel').forEach(p=>p.classList.remove('on'));
-  const tabs=['sources','add','convergence','gaps'];
+  const tabs=['sources','add'];
   const idx=tabs.indexOf(name);
   document.querySelectorAll('.sm-tab')[idx]?.classList.add('on');
   document.getElementById('smp-'+name)?.classList.add('on');
   if(name==='sources')smRenderSources();
-  if(name==='convergence')smRenderConv();
-  if(name==='gaps')smRenderGaps();
 }
 /* ── AIRTABLE SUBMIT FOR REVIEW ── */
 async function smSubmitReview(){
@@ -1191,7 +1221,41 @@ async function smSubmitReview(){
   setTimeout(()=>{if(msg)msg.style.display='none';},6000);
 }
 
+/* ── LIVE SOURCE COUNT (seed + approved Airtable records) ── */
+const AT_BASE_COUNT='appGTnev7jl45yAOj';
+const AT_TABLE_COUNT='tblHAvcNWQykNsC6f';
+const AT_KEY_COUNT='AIRTABLE_API_KEY';
+
+async function fetchApprovedCount(){
+  if(AT_KEY_COUNT==='AIRTABLE_API_KEY')return 0;
+  try{
+    // Count records where status is "Done" (approved)
+    const url=`https://api.airtable.com/v0/${AT_BASE_COUNT}/${AT_TABLE_COUNT}?fields[]=fldaM6UhwmTxYp9JI&filterByFormula=${encodeURIComponent("{fldaM6UhwmTxYp9JI}='Done'")}&pageSize=100`;
+    const res=await fetch(url,{headers:{'Authorization':`Bearer ${AT_KEY_COUNT}`}});
+    if(!res.ok)return 0;
+    const data=await res.json();
+    return(data.records||[]).length;
+  }catch(e){return 0;}
+}
+
+function updateSourceCountDisplays(n){
+  const label=n>0?`${n}+`:'30+';
+  ['heroSourceCount','methSourceCount'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=label;
+  });
+}
+
+async function refreshLiveCount(){
+  const local=await smLoad();
+  const approved=await fetchApprovedCount();
+  const total=local.length+approved;
+  updateSourceCountDisplays(total);
+}
+
 smStats();smRenderSources();smRenderConv();smRenderGaps();
+refreshLiveCount();
+setInterval(refreshLiveCount,60000);
 </script>
 </body>
 </html>
