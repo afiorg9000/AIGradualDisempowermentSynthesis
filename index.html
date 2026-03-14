@@ -1188,6 +1188,8 @@ function smTab(name){
   if(name==='sources')smRenderSources();
 }
 /* ── AIRTABLE SUBMIT FOR REVIEW ── */
+const NETLIFY_AIRTABLE_ENDPOINT='/.netlify/functions/airtable';
+
 async function smSubmitReview(){
   const note=document.getElementById('srNote')?.value?.trim();
   const name=document.getElementById('srName')?.value?.trim()||'Anonymous';
@@ -1196,45 +1198,35 @@ async function smSubmitReview(){
   const msg=document.getElementById('srMsg');
   if(msg){msg.style.display='inline';msg.style.color='#9e9b92';msg.textContent='Submitting...';}
   try{
-    /* Airtable submission — replace AIRTABLE_API_KEY with your personal access token from airtable.com/create/tokens */
-    const AT_BASE='appGTnev7jl45yAOj';
-    const AT_TABLE='tblHAvcNWQykNsC6f';
-    const AT_KEY='AIRTABLE_API_KEY';
-    const res=await fetch(`https://api.airtable.com/v0/${AT_BASE}/${AT_TABLE}`,{
+    const res=await fetch(NETLIFY_AIRTABLE_ENDPOINT,{
       method:'POST',
-      headers:{'Authorization':`Bearer ${AT_KEY}`,'Content-Type':'application/json'},
-      body:JSON.stringify({fields:{'fldqnO7TgwctFfa5a':name||'Anonymous submission','fldquWR3AfhvbvzVe':`Finding: ${note}\n\nContact: ${email||'not provided'}\nDate: ${new Date().toISOString().slice(0,10)}`,'fldaM6UhwmTxYp9JI':'Todo'}})
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({note,name,email})
     });
     if(res.ok){
       if(msg){msg.style.color='#28c996';msg.textContent='Submitted. Thank you — it will be reviewed for inclusion.';}
       ['srName','srEmail','srNote'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
       await window.storage.set('gd-v2-lastsubmit',new Date().toISOString());
     } else {
-      /* Fallback: save locally if Airtable not configured */
+      /* Fallback: save locally if server-side Airtable function is not configured */
       await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
-      if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Configure Airtable for server-side review tracking.';}
+      if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Configure Netlify Airtable env vars to enable server-side review tracking.';}
     }
   } catch(e){
     await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
-    if(msg){msg.style.color='#28c996';msg.textContent='Saved — Airtable not configured, stored locally.';}
+    if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify function unavailable or not configured yet.';}
   }
   setTimeout(()=>{if(msg)msg.style.display='none';},6000);
 }
 
-/* ── LIVE SOURCE COUNT (seed + approved Airtable records) ── */
-const AT_BASE_COUNT='appGTnev7jl45yAOj';
-const AT_TABLE_COUNT='tblHAvcNWQykNsC6f';
-const AT_KEY_COUNT='AIRTABLE_API_KEY';
+/* ── LIVE SOURCE COUNT (seed + approved Airtable records via Netlify) ── */
 
 async function fetchApprovedCount(){
-  if(AT_KEY_COUNT==='AIRTABLE_API_KEY')return 0;
   try{
-    // Count records where status is "Done" (approved)
-    const url=`https://api.airtable.com/v0/${AT_BASE_COUNT}/${AT_TABLE_COUNT}?fields[]=fldaM6UhwmTxYp9JI&filterByFormula=${encodeURIComponent("{fldaM6UhwmTxYp9JI}='Done'")}&pageSize=100`;
-    const res=await fetch(url,{headers:{'Authorization':`Bearer ${AT_KEY_COUNT}`}});
+    const res=await fetch(NETLIFY_AIRTABLE_ENDPOINT,{method:'GET'});
     if(!res.ok)return 0;
     const data=await res.json();
-    return(data.records||[]).length;
+    return Number.isFinite(data.approvedCount)?data.approvedCount:0;
   }catch(e){return 0;}
 }
 
