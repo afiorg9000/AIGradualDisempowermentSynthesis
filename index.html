@@ -824,7 +824,7 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
           <button class="sm-btn primary" onclick="smSubmitReview()">Submit for review</button>
           <span id="srMsg" style="font-size:12px;color:var(--teal);display:none;"></span>
         </div>
-        <div style="font-size:11px;color:var(--ink3);margin-top:8px;">Submissions are stored in Airtable and reviewed by the synthesis maintainer. <a href="https://sofiamendezdantas.netlify.app/" style="color:var(--teal);">Sofia Mendez Dantas</a></div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:8px;">Submissions are stored via Netlify Forms and reviewed by the synthesis maintainer. <a href="https://sofiamendezdantas.netlify.app/" style="color:var(--teal);">Sofia Mendez Dantas</a></div>
       </div>
     </div>
 
@@ -841,6 +841,14 @@ footer p{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.
   </div>
 </div>
 </div>
+
+<!-- Netlify build-time form detection -->
+<form name="gd-source-review" netlify hidden>
+  <input type="text" name="name">
+  <input type="text" name="contact">
+  <textarea name="finding"></textarea>
+  <input type="text" name="submitted_at">
+</form>
 
 <footer>
   <p style="color:rgba(238,235,226,.3);font-size:12px;line-height:1.9;">
@@ -1187,8 +1195,11 @@ function smTab(name){
   document.getElementById('smp-'+name)?.classList.add('on');
   if(name==='sources')smRenderSources();
 }
-/* ── AIRTABLE SUBMIT FOR REVIEW ── */
-const NETLIFY_AIRTABLE_ENDPOINT='/.netlify/functions/airtable';
+/* ── NETLIFY FORMS SUBMIT FOR REVIEW ── */
+const NETLIFY_FORM_NAME='gd-source-review';
+function encodeFormBody(fields){
+  return Object.entries(fields).map(([k,v])=>`${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+}
 
 async function smSubmitReview(){
   const note=document.getElementById('srNote')?.value?.trim();
@@ -1198,36 +1209,38 @@ async function smSubmitReview(){
   const msg=document.getElementById('srMsg');
   if(msg){msg.style.display='inline';msg.style.color='#9e9b92';msg.textContent='Submitting...';}
   try{
-    const res=await fetch(NETLIFY_AIRTABLE_ENDPOINT,{
+    const submittedAt=new Date().toISOString();
+    const res=await fetch('/',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({note,name,email})
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:encodeFormBody({
+        'form-name':NETLIFY_FORM_NAME,
+        name,
+        contact:email||'not provided',
+        finding:note,
+        submitted_at:submittedAt
+      })
     });
     if(res.ok){
       if(msg){msg.style.color='#28c996';msg.textContent='Submitted. Thank you — it will be reviewed for inclusion.';}
       ['srName','srEmail','srNote'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
       await window.storage.set('gd-v2-lastsubmit',new Date().toISOString());
     } else {
-      /* Fallback: save locally if server-side Airtable function is not configured */
+      /* Fallback: save locally if Netlify Forms is unavailable */
       await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
-      if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Configure Netlify Airtable env vars to enable server-side review tracking.';}
+      if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify Forms is not available in this environment.';}
     }
   } catch(e){
     await window.storage.set('gd-submission-'+Date.now(),JSON.stringify({note,name,email,date:new Date().toISOString()}),true);
-    if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify function unavailable or not configured yet.';}
+    if(msg){msg.style.color='#28c996';msg.textContent='Saved locally. Netlify Forms unavailable right now.';}
   }
   setTimeout(()=>{if(msg)msg.style.display='none';},6000);
 }
 
-/* ── LIVE SOURCE COUNT (seed + approved Airtable records via Netlify) ── */
+/* ── LIVE SOURCE COUNT (seed + local additions) ── */
 
 async function fetchApprovedCount(){
-  try{
-    const res=await fetch(NETLIFY_AIRTABLE_ENDPOINT,{method:'GET'});
-    if(!res.ok)return 0;
-    const data=await res.json();
-    return Number.isFinite(data.approvedCount)?data.approvedCount:0;
-  }catch(e){return 0;}
+  return 0;
 }
 
 function updateSourceCountDisplays(n){
